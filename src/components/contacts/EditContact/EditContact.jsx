@@ -22,8 +22,10 @@ const EditContact  = () => {
                     setPhotourl(user.photourl)
                     setMobile(user.mobile)
                     setEmail(user.email)
-                    setProductname(user.productname)
-                    setDescription(user.description)
+                    setDept(user.dept)
+                    setDob(user.dob)
+                    setHsc(user.hsc)
+                    setSslc(user.sslc)
                     
                     setDis(true)
                 }
@@ -33,12 +35,17 @@ const EditContact  = () => {
     const [photourl,setPhotourl]=useState('')
     const [mobile,setMobile]=useState('')
     const [email,setEmail]=useState('')
-    const [productname,setProductname]=useState('')
-    const [description,setDescription]=useState('')
+    const [dept,setDept]=useState('')
+    const [dob,setDob]=useState('')
+    const [hsc,setHsc]=useState('')
+    const [sslc,setSslc]=useState('')
+
+
+    
 
     const handleSubmit =async (e) =>{
         e.preventDefault();
-        const {data}=await axios.post(`http://localhost:8080/edit/${user._id}`,{name,photourl,mobile,email,productname,description})
+        const {data}=await axios.post(`http://localhost:8080/edit/${user._id}`,{name,photourl,mobile,email,dept,hsc,sslc})
         navigate('/contacts/list')
 }
    
@@ -50,9 +57,9 @@ const EditContact  = () => {
                 <div className="row">
                     <div className="col">
                         <p className="h4 text-primary fw-bold">
-                            Edit Contact
+                            Update student details
                         </p>
-                        <p className='fst-italic'>ihiiiiiiiiiii</p>
+                        
                     </div>
                 </div>
                 {dis && 
@@ -60,41 +67,51 @@ const EditContact  = () => {
                     <div className="col-md-4">
                             <form>
                                <div className="mb-2">
-                               <label className="form-label">Name</label> 
+                               <label className="form-label text-success fw-bold h5">Name</label> 
                                    <input type="text" className='form-control' value={name} onChange={e => setName(e.target.value)} />
                                 </div>  
                                 <div className="mb-2">
-                                <label className="form-label">PhotoUrl</label> 
+                                <label className="form-label text-success fw-bold h5">Photo</label> 
                                    <input type="text" className='form-control' value={photourl} onChange={e => setPhotourl(e.target.value)} />
                                 </div>  
                                 <div className="mb-2">
-                                <label className="form-label">Mobile</label> 
+                                <label className="form-label text-success fw-bold h5">Mobile</label> 
                                    <input type="number" className='form-control' value={mobile} onChange={e => setMobile(e.target.value)}/>
                                 </div>  
                                 <div className="mb-2">
-                                <label className="form-label">Email</label>
+                                <label className="form-label text-success fw-bold h5">Email</label>
                                    <input type="email" className='form-control' value={email} onChange={e => setEmail(e.target.value)} />
                                 </div>  
                                 <div className="mb-2">
-                                <label className="form-label">Productname</label> 
-                                   <input type="text" className='form-control' value={productname} onChange={e => setProductname(e.target.value)} />
-                                </div>  
+                                {/* <label className="form-label">Department</label> 
+                                  <select className="form-select">
+                                    <option value={dept} onChange={e => setDept(e.target.value)}>Computer science and Engineering</option>
+                                    <option value={dept} onChange={e => setDept(e.target.value)}>Information Technology</option>
+                                    <option value={dept} onChange={e => setDept(e.target.value)}>Electronics and communication Engineering</option>
+                                  </select> */}
+                                </div>
                                 <div className="mb-2">
-                                <label className="form-label">Description</label> 
-                                   <input type="text" className='form-control' value={description} onChange={e => setDescription(e.target.value)} />
-                                </div>  
+                                <label className="form-label text-success fw-bold h5">DOB</label> 
+                                   <input type="date" className='form-control' value={dob} onChange={e => setDob(e.target.value)} />
+                                </div>
+                                <div className="mb-2">
+                                <label className="form-label text-success fw-bold h5">HSC mark</label> 
+                                   <input type="text" className='form-control' value={hsc} onChange={e => setHsc(e.target.value)} />
+                                </div> 
+                                <div className="mb-2">
+                                <label className="form-label text-success fw-bold h5">SSLC mark</label> 
+                                   <input type="text" className='form-control' value={sslc} onChange={e => setSslc(e.target.value)} />
+                                </div>   
                               
                                   
                                 <div className="mb-2">
                                    <input type="submit" className='btn btn-primary' value='Update' onClick={handleSubmit}/>
-                                   <Link to={'/contacts/list'} className="btn btn-dark ms-2" >Cancel</Link>
+                                   {/* <Link to={'/contacts/list'} className="btn btn-dark ms-2" >Cancel</Link> */}
                                
                                 </div>   
                             </form>
                     </div>
-                    <div className="col-md-6">
-                        <img src="https://cdn2.vectorstock.com/i/1000x1000/41/11/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg " className='contact-img'/>
-                    </div>
+                    
                 </div>
 }
             </div>

@@ -5,7 +5,7 @@ let Spinner = () => {
         <>
         <br>
         </br>
-        <img src={spinner} alt=" " style={{width: '500px',height:'250px',float:'right',alignSelf:"center"}}></img>
+        {/* <img src={spinner} alt=" " style={{width: '500px',height:'250px',float:'right',alignSelf:"center"}}></img> */}
         </>
 
     )

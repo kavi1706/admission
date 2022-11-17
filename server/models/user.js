@@ -19,11 +19,15 @@ const userSchema = new Schema({
         type:String,
         required:true
     },
-    productname:{
+    dob:{
+        type:Date,
+        
+    },
+    hsc:{
         type:String,
         required:true
     },
-    description:{
+    sslc:{
         type:String,
         required:true
     },
@@ -35,4 +39,4 @@ const userSchema = new Schema({
     
     
 });
-module.exports = mongoose.model("User",userSchema);
+module.exports = mongoose.model("users",userSchema);

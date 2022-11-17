@@ -28,10 +28,7 @@ let ViewContact  = () => {
             <div className="container">
                <div className="row">
                 <div className="col">
-                    <p className="h3 text-warning fw-bold">
-                       View Contact
-                    </p>
-                    <p className='fst-italic'></p>
+                    
                 </div>
                </div>
             </div>
@@ -41,39 +38,41 @@ let ViewContact  = () => {
         <section className='view-contact mt-3'>
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-md-4">
-                       <img src={user.photourl} style={{witdth:"20px",height:"200px"}}></img>
-                    </div>
-                    <div className="col-md-8">
+                    
+                    <div className="col-md-6">
                     <ul className='list-group'>
                                         <li className='list-group-item list-group-item-action'>
                                             Name: <span className='fw-bold'>{user.name}</span>
+                                        </li>
+                                        {/* <li className='list-group-item list-group-item-action'>
+                                            Department: <span className='fw-bold'>{user.dept}</span>
+                                        </li> */}
+                                        <li className='list-group-item list-group-item-action'>
+                                            Dob: <span className='fw-bold'>{user.dob}</span>
                                         </li>
                                         <li className='list-group-item list-group-item-action'>
                                             Mobile: <span className='fw-bold'>{user.mobile}</span>
                                         </li>
                                         <li className='list-group-item list-group-item-action'>
-                                            Email: <span className='fw-bold'>{user.email}</span>
+                                            SSLC score: <span className='fw-bold'>{user.sslc}</span>
                                         </li>
                                         <li className='list-group-item list-group-item-action'>
-                                            Product Name: <span className='fw-bold'>{user.productname}</span>
+                                          HSC score: <span className='fw-bold'>{user.hsc}</span>
                                         </li>
+                                
                                         <li className='list-group-item list-group-item-action'>
-                                            Description: <span className='fw-bold'>{user.description}</span>
-                                        </li>
-                                        <li className='list-group-item list-group-item-action'>
-                                            Group: <span className='fw-bold'>{user.group}</span>
+                                        Photo: <br /><img src={user.photourl} style={{witdth:"20px",height:"200px"}}></img> <br /><br /><Link to={'/contacts/list'} className="btn btn-primary">HOME</Link>
                                         </li>
                                     </ul>
                     </div>
+                   
 
                 </div>
+                <br /><br />
+                
             </div>
-            <div className="row">
-                <div className="col">
-                   <Link to={'/contacts/list'} className="btn btn-warning">Back</Link>
-                </div>
-            </div>
+                
+           
 
         </section>
 }
